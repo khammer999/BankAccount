@@ -12,12 +12,15 @@ namespace BankAccountApp
         static void Main(string[] args)
         {
             Boolean appRunState = true; //application run state control variable
-            string checkForExit = "null";
+            //string checkForExit = "null";
 
 
             Checking myCheckingAcct = new Checking();
             Client myClientInfo = new Client();
             Savings mySavingsAcct = new Savings();
+
+            Console.WriteLine("TEST Colaborator");
+            Console.WriteLine("TEST Colaborator");
 
 
             //promt user for Clent Info for UI
@@ -57,6 +60,12 @@ namespace BankAccountApp
                 if (menuSelection == 1)
                 {
                     // view client info
+                    Console.WriteLine("Client Info " + myClientInfo.FName + myClientInfo.LName);
+                    Console.WriteLine("Account Number:" + myClientInfo.AccountNum);
+
+
+
+
                 }
                 if (menuSelection == 2)
                 {
@@ -69,11 +78,17 @@ namespace BankAccountApp
                     string subMenuSelection = Console.ReadLine().ToLower();
                     if (subMenuSelection == "a")
                     {
-                        //call checking balance 
-                    }
+                        //call checking balance
+                        
+                        Console.WriteLine(" Checking Account Balance:" + myCheckingAcct.GetBalance());
+
+                        
+                                                                                                                                    }
                     if (subMenuSelection == "b")
                     {
                         //call savings balance 
+                        Console.WriteLine("Savings Account Balance:" + mySavingsAcct.GetBalance());
+
                     }
 
                 }
@@ -131,7 +146,7 @@ namespace BankAccountApp
 
                 //NO CODE BEYOND HERE DANGER //NO CODE BEYOND HERE DANGER 
 
-                //EXIT PROGRAM OPTION
+              /*  //EXIT PROGRAM OPTION
                 Console.WriteLine();
                 Console.WriteLine("Do you wish to Exit? Enter \"Yes\" or \"No\"");
 
@@ -148,7 +163,7 @@ namespace BankAccountApp
                 }
 
                 //NO CODE BEYOND HERE DANGER //NO CODE BEYOND HERE DANGER //NO CODE BEYOND HERE DANGER //NO CODE BEYOND HERE DANGER
-
+                */
 
             } while (appRunState);
 
