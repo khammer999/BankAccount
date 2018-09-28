@@ -14,14 +14,15 @@ namespace BankAccountApp
             Boolean appRunState = true; //application run state control variable
             //string checkForExit = "null";
 
-
+            //instantiate set balance to 100.95
             Checking myCheckingAcct = new Checking();
+            myCheckingAcct.AcctBal = 100.95;
+
             Client myClientInfo = new Client();
+
+            //instantiate set balance to 150.50
             Savings mySavingsAcct = new Savings();
-
-            Console.WriteLine("TEST Colaborator");
-            Console.WriteLine("TEST Colaborator");
-
+            mySavingsAcct.AcctBal = 150.76;
 
             //promt user for Clent Info for UI
 
@@ -40,15 +41,15 @@ namespace BankAccountApp
                 // display UI
                
                 Console.WriteLine();
-                Console.WriteLine("< 1 > View Client Information");
+                Console.WriteLine("[1] View Client Information");
                 Console.WriteLine();
-                Console.WriteLine("< 2 > View Account Balance");
+                Console.WriteLine("[2] View Account Balance");
                 Console.WriteLine();
-                Console.WriteLine("< 3 > Deposit Funds");
+                Console.WriteLine("[3] Deposit Funds");
                 Console.WriteLine();
-                Console.WriteLine("< 4 > Withdraw Funds");
+                Console.WriteLine("[4] Withdraw Funds");
                 Console.WriteLine();
-                Console.WriteLine("< 5 > Exit ");
+                Console.WriteLine("[5] Exit ");
 
 
 
@@ -60,14 +61,12 @@ namespace BankAccountApp
                 if (menuSelection == 1)
                 {
                     // view client info
-                    Console.WriteLine("Client Info " + myClientInfo.FName + myClientInfo.LName);
+                    Console.WriteLine("Client: " + myClientInfo.FName +" " + myClientInfo.LName);
                     Console.WriteLine("Account Number:" + myClientInfo.AccountNum);
-
-
-
-
+                     
                 }
-                if (menuSelection == 2)
+
+                if (menuSelection == 2) //display balance section
                 {
                     Console.WriteLine();
                     Console.WriteLine("< a > Checking Account");
@@ -80,24 +79,24 @@ namespace BankAccountApp
                     {
                         //call checking balance
                         
-                        Console.WriteLine(" Checking Account Balance:" + myCheckingAcct.GetBalance());
+                        Console.WriteLine(" Checking Account Balance: $" + Math.Round(myCheckingAcct.GetBalance(),2));
 
                         
                                                                                                                                     }
                     if (subMenuSelection == "b")
                     {
                         //call savings balance 
-                        Console.WriteLine("Savings Account Balance:" + mySavingsAcct.GetBalance());
+                        Console.WriteLine("Savings Account Balance: $" + Math.Round(mySavingsAcct.GetBalance(),2));
 
                     }
 
                 }
-                if (menuSelection == 3)
+                if (menuSelection == 3) //deposit funds section
                 {
                     Console.WriteLine();
-                    Console.WriteLine("< a > Checking Account");
+                    Console.WriteLine("[ a ] Checking Account");
                     Console.WriteLine();
-                    Console.WriteLine("< b > Savings Account");
+                    Console.WriteLine("[ b ] Savings Account");
                     Console.WriteLine();
                     // prompt sub- menu response
                     string subMenuSelection = Console.ReadLine().ToLower();
@@ -112,29 +111,29 @@ namespace BankAccountApp
 
                 }
 
-                if (menuSelection == 4)
+                if (menuSelection == 4) //withraw funds section
                 {
                     Console.WriteLine();
-                    Console.WriteLine("< a > Checking Account");
+                    Console.WriteLine("[ a ] Checking Account");
                     Console.WriteLine();
-                    Console.WriteLine("< b > Savings Account");
+                    Console.WriteLine("[ b ] Savings Account");
                     Console.WriteLine();
                     // prompt sub- menu response
                     string subMenuSelection = Console.ReadLine().ToLower();
                     if (subMenuSelection == "a")
                     {
-                        //call checking balance 
+                        //call checking balance -deposit
                     }
                     if (subMenuSelection == "b")
                     {
-                        //call savings balance 
+                        //call savings balance - deposit 
                     }
  
                 }
 
                 if (menuSelection == 5)
                 {
-                    appRunState = false; 
+                    appRunState = false; //exit program
                     
                 }
 
